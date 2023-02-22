@@ -18,7 +18,7 @@ interface ITemplateVariable{
   
   interface ISendMail{
     to: IMailContact;
-    from?: IMailContact; //opcional
+    from?: IMailContact;
     subject: string;
     templateData: IParseMailTemplate;
   }
@@ -51,6 +51,5 @@ interface ITemplateVariable{
       console.log('Message sent: %s', message.messageId);
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(message));
     }
-  
   }
   

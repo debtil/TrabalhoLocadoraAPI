@@ -7,42 +7,13 @@ export class CreateUsers1677006105831 implements MigrationInterface {
             new Table({
             name: 'users',
             columns: [
-                    {
-                      name: 'id',
-                      type: 'uuid',
-                      isPrimary: true,
-                      generationStrategy: 'uuid',
-                      default: 'uuid_generate_v4()'
-                    },
-                    {
-                      name: 'name',
-                      type: 'varchar'
-                    },
-                    {
-                      name: 'email',
-                      type: 'varchar',
-                      isUnique: true
-                    },
-                    {
-                      name: 'password',
-                      type: 'varchar'
-                    },
-                    {
-                      name: 'avatar',
-                      type: 'varchar',
-                      isNullable: true
-                    },
-                    {
-                      name: 'created_at',
-                      type: 'timestamp',
-                      default: 'now()'
-                    },
-                    {
-                      name: 'updated_at',
-                      type: 'timestamp',
-                      default: 'now()'
-                    }
-                  
+                {name: 'id', type: 'uuid', isPrimary: true, generationStrategy: 'uuid', default: 'uuid_generate_v4()'},
+                {name: 'name', type: 'varchar'},
+                {name: 'email', type: 'varchar', isUnique: true},
+                {name: 'password', type: 'varchar'},
+                {name: 'avatar', type: 'varchar', isNullable: true},
+                {name: 'created_at', type: 'timestamp', default: 'now()'},
+                {name: 'updated_at', type: 'timestamp', default: 'now()'}
                 ]
         }))
     }
@@ -50,6 +21,4 @@ export class CreateUsers1677006105831 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('users');
     }
-
-
 }
