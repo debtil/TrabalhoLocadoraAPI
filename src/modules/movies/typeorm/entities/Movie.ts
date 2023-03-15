@@ -1,10 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import OrderMovies from "@modules/orders/typeorm/entities/OrderMovies";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('movies')
 export default class Movie{
     @PrimaryGeneratedColumn('uuid')
     id: string;
-    @Column() //faz automaticamente o mapeamento para varchar
+    @OneToMany(()=>OrderMovies,order_movies=>order_movies.movie)
+    order_movies:OrderMovies[];
+    @Column() 
     name: string;
     @Column('decimal')
     price: number;

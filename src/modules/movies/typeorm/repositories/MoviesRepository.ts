@@ -1,5 +1,9 @@
-import { EntityRepository, Repository } from "typeorm";
+import { EntityRepository, In, Repository } from "typeorm";
 import Movie from "../entities/Movie";
+
+interface IFindMovies{
+    id: string;
+  }
 
 @EntityRepository(Movie)
 export default class MoviesRepository extends Repository<Movie>{
@@ -9,4 +13,16 @@ export default class MoviesRepository extends Repository<Movie>{
         })
         return movie;
     }
+
+    public async findAllByIds(movies: IFindMovies[]): Promise<Movie[]>{
+        const moviesIds = movies.map(movie => movie.id);
+        const existsMovies = await this.find({
+          where:{
+            id: In(moviesIds),
+          }
+        })
+        return existsMovies;
+      }
+
 }
+
