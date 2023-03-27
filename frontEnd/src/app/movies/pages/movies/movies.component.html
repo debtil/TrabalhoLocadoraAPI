@@ -1,0 +1,45 @@
+<h3>API de cadastro de produtos</h3>
+<form [formGroup]="form_cadastrar" (ngSubmit)="submitForm()">
+    <label>Nome: </label>
+    <input formControlName = "name">
+    <br>
+    <label>Preço: </label>
+    <input formControlName = "price">
+    <br>
+    <label>Ano de lançamento: </label>
+    <input formControlName = "year">
+    <br>
+    <label>Diretor: </label>
+    <input formControlName = "director">
+    <br>
+    <label>Estúdio: </label>
+    <input formControlName = "studio">
+    <br>
+    <label>Duração: </label>
+    <input formControlName = "duration">
+    <br>
+    <label>Gênero: </label>
+    <input formControlName = "genre">
+    <br>
+    <button type="submit">Cadastrar</button>
+</form>
+
+<br>
+<hr>
+<ul *ngFor="let movie of this.movies">
+    <li>
+        <p>Produto: {{movie.name}}</p>
+        <p>Preço: {{movie.price}}</p>
+        <p>Ano de lançameto: {{movie.year}}</p>
+        <p>Diretor: {{movie.director}}</p>
+        <p>Estúdio: {{movie.studio}}</p>
+        <p>Duração: {{movie.duration}}</p>
+        <p>Gênero: {{movie.genre}}</p>
+    </li>
+    <li>
+        <p>
+            <button (click)="editar(movie)">Editar</button>
+            <button (click)="excluir(movie)" style="color: red;">Excluir</button>
+        </p>
+    </li>
+</ul>

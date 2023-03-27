@@ -1,9 +1,12 @@
 import { Router } from "express";
 import { celebrate, Joi, Segments } from 'celebrate';
 import MoviesController from "../controllers/MoviesController";
+import isAuthenticated from "@shared/http/middlewares/isAuthenticated";
 
 const moviesRouter = Router();
 const moviesController = new MoviesController();
+
+moviesRouter.use(isAuthenticated);
 
 moviesRouter.get('/', moviesController.index);
 
