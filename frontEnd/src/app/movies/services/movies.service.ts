@@ -12,9 +12,7 @@ export class MoviesService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   listarTodos(){
-    const token = this.authService.getToken();
-    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
-    return this.http.get<Movie[]>(`${this.apiURL}/movies`, {headers: headers});
+    return this.http.get<Movie[]>(`${this.apiURL}/movies`);
   }
 
   

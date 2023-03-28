@@ -1,13 +1,13 @@
-<h3>Login </h3>
+<div class="login-box">
+    <h1>Login </h1>
 
-<form [formGroup]="form_login" (ngSubmit)="submitForm()">
-    <label>Email: </label>
-    <input formControlName = "email">
+    <form [formGroup]="form_login" (ngSubmit)="submitForm()">
+        <input formControlName = "email" placeholder="Email">
+        <br>
+        <input placeholder="Senha" formControlName = "password" type="password">
+        <br>
+        <button type="submit" class="botao">Login</button>
+    </form>
     <br>
-    <label>Senha: </label>
-    <input formControlName = "password" type="password">
-    <br>
-    <button type="submit">Login</button>
-</form>
-
-<a (click)="goToCreate()">Não tem conta?</a>
+    <a (click)="goToCreate()">Não tem conta?</a>
+</div>

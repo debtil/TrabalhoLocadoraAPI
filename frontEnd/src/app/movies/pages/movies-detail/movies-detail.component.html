@@ -1,24 +1,19 @@
-<form [formGroup]="form_editar" (ngSubmit)="submitForm()">
-    <label>Nome: </label>
-    <input formControlName = "name">
-    <br>
-    <label>Preço: </label>
-    <input formControlName = "price">
-    <br>
-    <label>Ano de lançamento: </label>
-    <input formControlName = "year">
-    <br>
-    <label>Diretor: </label>
-    <input formControlName = "director">
-    <br>
-    <label>Estúdio: </label>
-    <input formControlName = "studio">
-    <br>
-    <label>Duração: </label>
-    <input formControlName = "duration">
-    <br>
-    <label>Gênero: </label>
-    <input formControlName = "genre">
-    <br>
-    <button type="submit">Salvar edição</button>
-</form>
+<div class="esquerda">
+    <form [formGroup]="form_editar" (ngSubmit)="submitForm()">
+        <input formControlName = "name" placeholder="Nome">
+        <br>
+        <input formControlName = "price" placeholder="Preço">
+        <br>
+        <input placeholder="Ano de lançamento" formControlName = "year">
+        <br>
+        <input placeholder="Diretor" formControlName = "director">
+        <br>
+        <input formControlName = "studio" placeholder="Estúdio">
+        <br>
+        <input formControlName = "duration" placeholder="Duração">
+        <br>
+        <input formControlName = "genre" placeholder="Gênero">
+        <br>
+        <button type="submit">Salvar Edição</button>
+    </form>
+</div>

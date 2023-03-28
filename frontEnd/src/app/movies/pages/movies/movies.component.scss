@@ -1,0 +1,59 @@
+
+
+.esquerda{
+    float: left;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    
+    padding: 20px;
+    background: #5988ed;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.esquerda input{
+    margin-bottom: 40px;
+
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    background: #5988ed;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+.direita{
+    float: right;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+.direita button{
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.titulo{
+    width: 50%; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.esquerda button{
+    background-color: #9ebcd0;
+    border: none;
+    margin-left: 15px;
+    height: 30px;
+    width: 300px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.esquerda button:hover{
+    cursor: pointer;
+    }

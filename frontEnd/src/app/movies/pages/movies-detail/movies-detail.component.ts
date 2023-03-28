@@ -31,13 +31,13 @@ export class MoviesDetailComponent implements OnInit {
       resultado => {
         this.movie = resultado;
         this.form_editar = this.formBuilder.group({
-          name: ["", [Validators.required]],
-          price: ["", [Validators.required]],
-          year: ["", [Validators.required]],
-          director: ["", [Validators.required]],
-          studio: ["", [Validators.required]],
-          duration: ["", [Validators.required]],
-          genre: ["", [Validators.required]],
+          name: [this.movie.name, [Validators.required]],
+          price: [this.movie.price, [Validators.required]],
+          year: [this.movie.year, [Validators.required]],
+          director: [this.movie.director, [Validators.required]],
+          studio: [this.movie.studio, [Validators.required]],
+          duration: [this.movie.duration, [Validators.required]],
+          genre: [this.movie.genre, [Validators.required]],
         });
       }
     );

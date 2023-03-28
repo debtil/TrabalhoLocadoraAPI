@@ -1,16 +1,18 @@
-<h3>Criar conta </h3>
 
-<form [formGroup]="form_create" (ngSubmit)="submitForm()">
-    <label>Nome: </label>
-    <input formControlName = "name">
-    <br>
-    <label>Email: </label>
-    <input formControlName = "email">
-    <br>
-    <label>Senha: </label>
-    <input formControlName = "password" type="password">
-    <br>
-    <button type="submit">Cadastrar</button>
-</form>
 
-<a (click)="goToLogin()">Já possui conta?</a>
+    <div class="login-box">
+        <h1>Criar conta</h1>
+        <form [formGroup]="form_create" (ngSubmit)="submitForm()">
+            <input formControlName = "name" placeholder="Nome">
+            <br>
+            <input formControlName = "email" placeholder="Email">
+            <br>
+            <input formControlName = "password" type="password" placeholder="Senha">
+            <br>
+            <button type="submit" class="botao">Cadastrar</button>
+        </form>
+        <br>
+        <a (click)="goToLogin()">Já possui conta?</a>
+    </div>
+
+

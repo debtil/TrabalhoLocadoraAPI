@@ -6,7 +6,6 @@ import isAuthenticated from "@shared/http/middlewares/isAuthenticated";
 const moviesRouter = Router();
 const moviesController = new MoviesController();
 
-moviesRouter.use(isAuthenticated);
 
 moviesRouter.get('/', moviesController.index);
 
